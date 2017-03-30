@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root
+  xmlns:jsp="http://java.sun.com/JSP/Page"
+  xmlns:c="http://java.sun.com/jsp/jstl/core"
+  version="2.1"
+  >
+<jsp:directive.page
+  language="java"
+  contentType="text/css; charset=UTF-8"
+  />
+<c:url var="imgUrl" value="/images"/>
+<jsp:text>
+    
+    /* Quando visto num Navegador de celular no modo Retrato (Portrait) ou pelo Aplicativo */
+
+body { /*********** body ***********/
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  background-color: black;
+  }
+  
+
+.tabelaLogin {
+  width: 100vw;
+  height: 100vh;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+.tema_Nome_Sistema {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5625em; /* 25px/16=1.5625em  */
+  font-weight: bold;
+  color: darkblue;
+  text-transform: uppercase;
+  text-shadow: 0.1em 0.1em 0.2em rgba(83,83,110,0.4);
+}
+
+
+.tema_Nome_Sistema_Principal {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.125em; /* 18px/16=1.125em  */
+  font-weight: bold;
+  color: darkblue;
+  text-transform: uppercase;
+  text-shadow: 0.1em 0.1em 0.2em rgba(83,83,110,0.4);
+}
+  
+
+.tabela_Principal {
+  width: 100vw;
+  margin-left:auto; 
+  margin-right:auto;
+  margin-top: 50px;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  /*padding: 20px;*/
+}
+
+
+.butoes {
+  width: 100%;
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;  
+}
+
+
+.butoes_Principal {
+  width: 40%;
+  font-weight: bold;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+.butoes:hover, .butoes_Principal:hover {
+  background-color: #45a049;
+}
+
+
+.alinhamento {
+  text-align: right;
+}
+
+
+.mensagemSenha {
+  color: gray; 
+  font-family: 'New Century Schoolbook', serif; 
+  font-size: 0.875em; /* 14px/16=0.875em */
+}
+
+
+.tabelaCadastro {
+  margin-left:auto; 
+  margin-right:auto;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 0px;
+}
+
+ 
+.caixa_Texto {
+  width: 100%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  font-size: 1.0em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  outline: none;
+}
+
+.caixa_Texto_DDD {
+  width: 30%;
+  padding: 10px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  font-size: 1.0em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  outline: none;
+}
+
+
+.caixa_Texto_ID_Interruptor {
+    width: 9.375em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.0em;
+    background-color: white;
+    background-image: url(${imgUrl}/search_icon.png);
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+
+.caixa_Texto_ID_Interruptor:focus {
+    border: 1px solid #555;
+}
+
+.caixa_Texto:focus {
+    border: 1px solid #555;
+}
+
+.caixa_Texto_DDD:focus {
+    border: 1px solid #555;
+}
+
+
+
+.tabela_Aparelhos_Principal {
+  width: 100vw;
+  margin-left:auto; 
+  margin-right:auto;
+  vertical-align: middle;
+  border-radius: 5px;
+  border-collapse: collapse;
+  background-color: #f2f2f2;
+}
+
+.linhaImpar {
+  font-size: 1.0em;
+  text-align: center;
+  background-color: #C8C8C8;
+  color: black;
+  height: 60px;
+  padding: 20px;
+}
+
+.linhaPar {
+  font-size: 1.0em;
+  text-align: center;
+  background-color: #f2f2f2;
+  color: black;
+  height: 60px;
+  padding: 20px;
+}
+
+.cabecalho_Tabela_Aparelhos {
+  font-size: 0.9375em;
+  font-weight: bold;
+  color: darkblue;
+  text-transform: uppercase;
+}
+
+
+.interruptor_Tabela_Aparelhos {
+  font-size: 1.125em;
+  text-align: left;
+  text-transform: uppercase;
+  background-color: #4CAF50;
+  color: white;
+  height: 2.5em;
+}
+
+.mensagem_Bem_Vindo_Principal {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+}
+
+.texto_Principal {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.0em;
+  font-weight: bold;
+  text-align: left;
+  color: black;
+}
+
+
+
+
+
+
+/******************** Quando visto num notebook ou tablet (Landscape) ********************************/
+@media screen and (min-width: 700px) {
+  body {
+    background-image: url(${imgUrl}/cidade.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+  }
+  
+  .tabelaLogin {
+    width: 50vw;
+    height: 50vh;
+    margin-top: 30px;
+  }
+  
+  
+ .tabela_Principal {
+    width: 70vw;
+    padding: 20px;
+ }
+ 
+ 
+ .butoes_Principal {
+  width: 20%;
+}
+  
+.tema_Nome_Sistema_Principal {
+  font-size: 1.5625em; /* 25px/16=1.5625em  */
+}
+  
+  
+    
+  .layout_Topo_Logo {
+    width: 78vw;
+  }
+
+  .layout_Topo_Flags {
+    width: 10vw;
+  }
+  
+  
+  .index_Logo {
+    width: 300px;
+    height: 100px;
+  }
+    
+
+  .flag_Butao_Brazil {
+      padding: 18px 30px;
+      margin: 0px 10px;
+      border: none;
+      border-radius: 80px;
+  }
+
+
+  .flag_Butao_UK {
+      padding: 18px 30px;
+      margin: 0px 10px;
+      border: none;
+      border-radius: 80px;
+  }
+  
+  .tabelaCadastro {
+      width: 50vw;
+      height: 70vh;
+      padding: 20px;
+      vertical-align: middle;
+  }
+
+
+    .colunaRotulo_tabelaCadastro {
+      width: 10vw;
+    }
+
+    .colunaInput_tabelaCadastro {
+      width: 20vw;
+    }
+
+    .colunaInput02_tabelaCadastro {
+      width: 10vw;
+    }
+
+    .colunaMsg_tabelaCadastro {
+      width: 10vw;
+    }
+    
+    
+    .caixa_Texto {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+    }
+
+    .caixa_Texto_DDD {
+      width: 30%;
+      padding: 12px 20px;
+      margin: 8px 0;
+    }
+
+    .caixa_Texto_ID_Interruptor {
+        box-sizing: border-box;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+    }
+
+
+    .caixa_Texto_ID_Interruptor:focus {
+        width: 30%;
+    }
+    
+ 
+    .tabela_Aparelhos_Principal {
+      width: 50vw;
+    }
+
+    .linhaImpar {
+      font-size: 1.0em;
+    }
+
+    .linhaPar {
+      font-size: 1.0em;
+    }
+
+    .cabecalho_Tabela_Aparelhos {
+      font-size: 1.0625em;
+      font-weight: bold;
+    }
+
+
+    .interruptor_Tabela_Aparelhos {
+      font-size: 1.125em;
+      text-transform: uppercase;
+      height: 3.75em;
+    }
+    
+    
+    .cabecalho_Tabela_Aparelhos {
+      font-size: 1.0625em;
+    }
+    
+}
+
+
+
+
+
+
+/******************** Ajuste para quando for visto numa tela de celular (Portrait) **************************************************/
+@media screen and (-webkit-device-pixel-ratio: 1.5) and (min-width: 300px) {
+    .index_Logo {
+        width: 14.0625em; /*225px*/
+        height: 4.6875em; /*75px*/
+    }
+    
+    .tema_Nome_Sistema_Principal {
+        font-size: 1.125em; /* 18px/16=1.125em  */
+    }
+    
+    
+    .flag_Butao_Brazil {
+        width: 2.3125em; /*37px*/
+        height: 2.3125em; /*37px*/
+        padding: 0em 0.4375em; /*7px*/
+        margin: 0em 0.4375em; /*7px*/
+        
+        /* 14px/16=0.875em */
+    }
+    
+    .flag_Butao_UK {
+        width: 2.3125em; /*37px*/
+        height: 2.3125em; /*37px*/
+        padding: 0em 0.4375em; /*7px*/
+        margin: 0em 0.4375em; /*7px*/
+    }
+}
+
+
+@media screen and (-webkit-device-pixel-ratio: 1.0) and (min-width: 200px) {
+    .index_Logo {
+        width: 150px;
+        height: 50px;
+    }
+    
+    .tema_Nome_Sistema_Principal {
+        font-size: 1.0em; /* 16px/16=1.0em  */
+    }
+    
+    .flag_Butao_Brazil {
+        width: 24px;
+        height: 24px;
+        padding: 0em 0.3125em; /*5px*/
+        margin: 0em 0.3125em; /*5px*/
+        
+    }
+    
+    .flag_Butao_UK {
+        width: 24px;
+        height: 24px;
+        padding: 0em 0.3125em; /*5px*/
+        margin: 0em 0.3125em; /*5px*/
+        
+    }
+}
+
+
+@media screen and (-webkit-device-pixel-ratio: 0.75) and (min-width: 100px) {
+    .index_Logo {
+        width: 112px;
+        height: 37px;
+    }
+    
+    
+    .tema_Nome_Sistema_Principal {
+        font-size: 0.875em; /* 14px/16=0.875em  */
+    }
+    
+    .flag_Butao_Brazil {
+        width: 18px;
+        height: 18px;
+        padding: 0em 0.125em; /*2px*/
+        margin: 0em 0.125em; /*2px*/
+    }
+    
+    .flag_Butao_UK {
+        width: 18px;
+        height: 18px;
+        padding: 0em 0.125em; /*2px*/
+        margin: 0em 0.125em; /*2px*/
+    }
+}
+
+
+/*************************** Quando visto no modo paisagem (Landscape) seja num celular ou num tablet. **********************/
+@media screen and (max-width: 700px) and (orientation: landscape) {
+
+    body { /*********** body ***********/
+      margin: 0px;
+      padding: 0px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 100%;
+      background-color: black;
+      }
+
+
+    .tabelaLogin {
+      width: 100vw;
+      height: 100vh;
+      margin-top: 10px;
+    }
+    
+    .tabela_Principal {
+      width: 100vw;
+      padding: 20px;
+    }
+    
+    .butoes_Principal {
+        width: 40%;
+    }
+    
+    
+    .tabela_Aparelhos_Principal {
+      width: 100vw;
+    }
+    
+     
+   .tabelaCadastro {
+      width: 100vw;
+      height: 100vh;
+   }
+    
+    
+  
+}
+
+
+
+
+
+
+.mensagem_Login {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 0.9375em; /* 15px/16=0.9375em */
+   font-weight: normal;
+}
+
+
+.mensagem_Cadastro {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.5625em; /* 25px/16=1.5625em  */
+  font-weight: bold;
+}
+
+
+.mensagem_Error {
+  color: red; 
+  font-family: 'New Century Schoolbook', serif; 
+  font-size: 0.875em; /* 14px/16=0.875em */
+  font-style: italic;
+}
+
+
+
+
+.topo { /*********** Topo da Tela Principal ***********/
+  width: 100vw;
+  height: 15vh;
+  background-color: #f2f2f2;
+  vertical-align: middle;
+ }
+
+
+
+
+.topoComImagem { 
+  /*width: 100vw;*/
+  /*height: 10vh;*/
+  background-image: url(${imgUrl}/ceu02.jpg);
+  background-repeat: repeat-x;
+  background-position: center top;
+  background-attachment: fixed;
+  /*background-size: cover;*/
+  display: block;
+ }
+
+
+
+</jsp:text>
+</jsp:root>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : index
+    Created on : 04/10/2016, 17:12:14
+    Author     : Luiz Fernando
+    Descrição  : Tela de início do Sistema onde o usuário efetua o login.
+-->
+<jsp:root
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core" 
+    version="2.1"
+    >
+
+    <jsp:directive.page
+        language="java"
+        contentType="application/xhtml+xml;charset=UTF-8"
+        />
+
+    <jsp:output omit-xml-declaration="false"/>
+    <jsp:output
+        doctype-root-element="html"
+        doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+        doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+        />
+
+    <c:url var="cssUrl" value="/css/formatacao.jspx"/>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>Mobitronics - SCD</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
+            <link rel="stylesheet" href="${cssUrl}" type="text/css"/>
+        </head>
+        <body>
+
+            <f:view >
+                <h:form>
+
+                    <h:panelGrid columns="3">
+                        
+                        <h:panelGroup layout="block" styleClass="layout_Topo_Logo"> <h:graphicImage url="/images/logo.png" styleClass="index_Logo"/> </h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="layout_Topo_Flags"> <h:commandButton id="Brasil" image="/images/brazil.png" styleClass="flag_Butao_Brazil" actionListener="#{userData.alterarIdioma}"/> </h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="layout_Topo_Flags"> <h:commandButton id="UK" image="/images/uk.png" styleClass="flag_Butao_UK" actionListener="#{userData.alterarIdioma}"/> </h:panelGroup>
+
+                    </h:panelGrid>
+
+                    <h:panelGrid columns="3" frame="box" styleClass="tabelaLogin">
+
+                        <f:facet name="header">
+
+                            <h:panelGroup>
+
+                                <h:outputText value="#{msg['index_Nome_Sistema']}" styleClass="tema_Nome_Sistema"/>
+                                <br/>
+                                <br/>
+                                <h:outputText value="#{msg['index_Mensagem_Login_01']}" styleClass="mensagem_Login"/>
+                                <br/>
+                                <h:outputText value="#{msg['index_Mensagem_Login_02']}" styleClass="mensagem_Login"/>
+
+                            </h:panelGroup>
+
+                        </f:facet>
+
+
+                        <h:panelGroup layout="block"> <h:outputLabel for="usuario_Email" value="E-Mail:"/> </h:panelGroup>
+                        <h:panelGroup layout="block"> <h:inputText id="usuario_Email" styleClass="caixa_Texto" size="30" value="#{cliente.email}" validator="#{cliente.validar}" required="#{cliente.flag_Requerido}" requiredMessage="É necessário informar o E-Mail de usuário."/> </h:panelGroup>
+                        <h:panelGroup layout="block"> <h:message for="usuario_Email" styleClass="mensagem_Error"/> </h:panelGroup>
+
+                        <h:panelGroup layout="block"> <h:outputLabel for="usuario_Senha" value="#{msg['index_Senha']}"/> </h:panelGroup>   
+                        <h:panelGroup layout="block"> <h:inputSecret id="usuario_Senha" styleClass="caixa_Texto" size="30" maxlength="10" value="#{cliente.senha}" validator="#{cliente.validar}" required="#{cliente.flag_Requerido}" requiredMessage="É necessário informar a senha."/>  </h:panelGroup>
+                        <h:panelGroup layout="block"> <h:message for="usuario_Senha" styleClass="mensagem_Error"/> </h:panelGroup>
+
+                        <h:panelGroup layout="block"> </h:panelGroup>
+                        <h:panelGroup layout="block" styleClass="alinhamento"> <h:commandLink value="#{msg['index_Mensagem_Senha']}" action="recuperacao" styleClass="mensagemSenha"/> </h:panelGroup>
+                        <h:panelGroup layout="block"> </h:panelGroup>
+
+                        <h:panelGroup layout="block"> <h:commandButton id="logar" value="#{msg['index_Logar']}" title="Clique aqui para entrar" styleClass="butoes" action="#{cliente.sentidoNavegacao}" actionListener="#{cliente.mostrarGUIInterruptor}"/>  </h:panelGroup>
+                        <h:panelGroup layout="block"> <h:commandButton id="cadastrar" value="#{msg['index_Cadastrar']}" styleClass="butoes" action="cadastro" actionListener="#{cliente.mostrarGUIInterruptor}"/> </h:panelGroup>
+                        <h:panelGroup> </h:panelGroup>
+
+                        <h:panelGroup> </h:panelGroup>
+                        <h:panelGroup> <h:message for="logar" styleClass="mensagem_Error"/> </h:panelGroup>
+                        <h:panelGroup> </h:panelGroup>
+
+                    </h:panelGrid>
+
+                </h:form>
+            </f:view> 
+
+        </body>
+    </html>
+</jsp:root>

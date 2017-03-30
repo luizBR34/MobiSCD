@@ -1,0 +1,60 @@
+body {
+
+  background-image: url("http://mobiscd-mobitronics.rhcloud.com/images/cidade.jpg");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+
+
+table {
+
+  background-color: #f2f2f2; 
+  width: 50vw; 
+  height: 50vh; 
+  margin-left: auto; 
+  margin-right: auto;
+  padding: 15px;
+
+}
+
+
+h1 {
+
+  font-size: 1.75em; 
+  font-weight: bold;
+  text-align: center; 
+  color: #339966;
+
+}
+
+
+h2 {
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.125em; 
+  font-weight: bold;
+  color: darkblue;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0.1em 0.1em 0.2em rgba(83,83,110,0.4);
+}
+
+
+h3 {
+
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 0.9375em;
+   font-weight: normal;
+}
+
+
+p.copyright {
+
+  font-family: Arial; 
+  font-size: 12px; 
+  color: #6c6d70;
+  text-align: center;
+}
+
+

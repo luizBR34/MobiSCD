@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Document   : cadastro
+    Created on : 05/10/2016, 17:13:59
+    Author     : Luiz Fernando
+    Descrição  : Tela de cadastro de um novo usuário.
+-->
+<jsp:root
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"  
+    version="2.1"
+    >
+
+    <jsp:directive.page
+        language="java"
+        contentType="application/xhtml+xml;charset=UTF-8"
+        />
+
+    <jsp:output omit-xml-declaration="false"/>
+    <jsp:output
+        doctype-root-element="html"
+        doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
+        doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+        />
+
+    <c:url var="cssUrl" value="/css/formatacao.jspx"/>
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <title>Mobitronics - Cadastro do Sistema</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no"/>
+            <link rel="stylesheet" href="${cssUrl}" type="text/css"/>
+        </head>
+        <body>
+
+            <f:view>
+                <h:form>
+
+                    <h:panelGrid columns="4" frame="box" columnClasses="colunaRotulo_tabelaCadastro, colunaInput_tabelaCadastro, colunaInput02_tabelaCadastro, colunaMsg_tabelaCadastro" styleClass="tabelaCadastro">
+
+                        <f:facet name="header">
+                            
+                            <h:panelGroup>
+                                
+                                <h:outputText value="#{msg['index_Nome_Sistema']}" styleClass="tema_Nome_Sistema"/>                           
+                            <br/>
+                            <br/>
+                            <h:outputText value="#{msg['cadastro_Mensagem_Inicial']}" styleClass="mensagem_Cadastro"/>
+                            
+                            </h:panelGroup>
+
+                        </f:facet>
+
+                        
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Nome" value="#{msg['cadastro_Nome']}"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Nome" styleClass="caixa_Texto" size="40" maxlength="50" value="#{cliente.nome}" required="true" requiredMessage="É necessário informar o nome."/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Nome" styleClass="mensagem_Error"/> </h:panelGroup>
+                            
+                            
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Estado" value="#{msg['cadastro_Estado']}"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> 
+                                <h:selectOneMenu id="cadastro_Estado" value="#{cliente.estado}" styleClass="caixa_Texto" required="true" requiredMessage="É necessário informar o Estado.">
+                                    <f:selectItems value="#{cliente.estados_Nomes}"/>
+                                </h:selectOneMenu>
+                            </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Estado" styleClass="mensagem_Error"/> </h:panelGroup>
+
+                            
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Cidade" value="#{msg['cadastro_Cidade']}"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Cidade" styleClass="caixa_Texto" size="40" maxlength="40" value="#{cliente.cidade}" required="true" requiredMessage="É necessário informar a cidade."/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Cidade" styleClass="mensagem_Error"/> </h:panelGroup>
+
+                            
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Endereco" value="#{msg['cadastro_Endereco']}"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Endereco" styleClass="caixa_Texto" size="40" maxlength="50" value="#{cliente.endereco}" required="true" requiredMessage="É necessário informar o endereço."/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Endereco" styleClass="mensagem_Error"/> </h:panelGroup>
+                            
+                            
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_DDD" value="#{msg['cadastro_DDD']}"/>   </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_DDD" styleClass="caixa_Texto_DDD" size="3" maxlength="2" value="#{cliente.tel_DDD}" required="true" requiredMessage="É necessário informar o DDD."/> <h:outputText value="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"/>  <h:outputLabel for="cadastro_Telefone" value="#{msg['cadastro_Telefone']}"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Telefone" styleClass="caixa_Texto" size="12" maxlength="10" value="#{cliente.telefone}" required="true" requiredMessage="É necessário informar o telefone."/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Telefone" styleClass="mensagem_Error"/> </h:panelGroup>
+                            
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Email" value="E-Mail:"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Email" styleClass="caixa_Texto" size="30" maxlength="30" value="#{cliente.email}" required="true" requiredMessage="É necessário informar o E-Mail."/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Email" styleClass="mensagem_Error"/> </h:panelGroup>
+                            
+                            
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Senha" value="#{msg['cadastro_Senha']}"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Senha" styleClass="caixa_Texto" size="20" maxlength="10" value="#{cliente.senha}" validator="#{cliente.validar}" required="true" requiredMessage="É necessário informar a senha."/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Senha" styleClass="mensagem_Error"/> </h:panelGroup>
+                            
+                            
+                            <h:panelGroup layout="block"> <h:outputLabel for="cadastro_Senha02" value="#{msg['cadastro_Repetir_Senha']}"/> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:inputText id="cadastro_Senha02" styleClass="caixa_Texto" size="20" maxlength="10" value="#{cliente.repetir_Senha}" validator="#{cliente.validar}" required="true" requiredMessage="Por favor repita a senha."/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:message for="cadastro_Senha02" styleClass="mensagem_Error"/> </h:panelGroup>
+                            
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:commandButton id="gravar_Cadastro" value="#{msg['cadastro_Botao_Gravar']}" styleClass="butoes" action="#{cliente.sentidoNavegacaoCadastro}" actionListener="#{cliente.mostrarGUIInterruptor}"/>  </h:panelGroup>
+                            <h:panelGroup layout="block"> <h:commandButton id="resetar" value="#{msg['cadastro_Botao_Resetar']}" styleClass="butoes" actionListener="#{cliente.mostrarGUIInterruptor}"/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup> <h:message for="gravar_Cadastro" styleClass="mensagem_Error"/> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+                            <h:panelGroup> </h:panelGroup>
+
+                    </h:panelGrid>
+
+
+
+
+                </h:form>
+            </f:view> 
+
+        </body>
+    </html>
+</jsp:root>

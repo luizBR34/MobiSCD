@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    version="2.1"
+    >
+    <jsp:directive.page
+        language="java"
+        contentType="application/xhtml+xml;charset=UTF-8"
+        />
+    <f:subview id="Topo">
+
+
+        <h:panelGrid columns="2" frame="box" styleClass="topo">
+
+            <h:panelGroup layout="block"><h:graphicImage url="/images/logo.png" styleClass="index_Logo"/></h:panelGroup>
+            <h:panelGroup layout="block"><h:outputText value="#{msg['index_Nome_Sistema']}" styleClass="tema_Nome_Sistema_Principal"/></h:panelGroup>
+
+        </h:panelGrid>
+
+
+
+
+    </f:subview>
+</jsp:root>

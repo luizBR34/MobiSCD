@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsp:root
+    xmlns:jsp="http://java.sun.com/JSP/Page"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    version="2.1"
+    >
+    <jsp:directive.page
+        language="java"
+        contentType="application/xhtml+xml;charset=UTF-8"
+        />
+    
+
+
+    <f:subview id="Centro">
+        <h:panelGrid styleClass="tabela_Principal">
+            <h:panelGroup layout="block">
+                <h:outputText value="#{msg['principal_Mensagem_Bem_Vindo']} #{cliente.nome}" styleClass="mensagem_Bem_Vindo_Principal"/>
+                <br/>
+                <br/>
+
+                <!--Teste para saber se o usuário já cadastrou um interruptor -->
+                <c:if test="${empty cliente.interruptor_ID}"> 
+
+                    <h:outputText value="#{msg['principal_Mensagem_Inicial']}" styleClass="texto_Principal"/> 
+
+                    <br/>
+                    <br/>
+
+                    <!--Esses componentes só devem aparecer ao clicar no botão ADICIONAR -->
+                    <c:if test="${cliente.flag_Chave_Interruptor == true}">
+
+                        <h:outputLabel for="interruptorID" value="#{msg['principal_Chave_Interruptor']}" styleClass="texto_Principal"/>
+                        <h:inputText id="interruptorID" size="12" maxlength="10" styleClass="caixa_Texto_ID_Interruptor" required="true" requiredMessage="É necessário informar a chave do Interruptor Remoto." value="#{cliente.TEMP_interruptor_ID}"/>
+                        <h:commandButton id="mostrarCampoAparelho" value="#{msg['principal_Botao_Buscar']}" styleClass="butoes_Principal" actionListener="#{cliente.mostrarGUIInterruptor}"/>  
+                        <h:message for="interruptorID" styleClass="mensagem_Error"/>
+
+                        <br/>
+                        <br/> 
+                        <h:message for="mostrarCampoAparelho" styleClass="mensagem_Error"/>
+                        <br/>
+
+                        <!--Aqui exibe os campos para dar nome aos aparelhos eletronicos dependendo da quantidades de canais que o ID do interruptor tem-->
+                        <c:if test="${cliente.flag_Nomes_Aparelhos == true}">
+
+
+                            <!--Se o ID do Interruptor fornecida pelo usuário é valida e foi encontrada na base -->
+                            <c:if test="${cliente.interruptor_Quant_Canais > 0}">
+                                
+                                    
+                                    <c:forEach var="i" begin="1" end="${cliente.interruptor_Quant_Canais}">
+
+                                        
+                                        <c:choose>
+                                            <c:when test="${i eq 1}">
+                                                
+                                                <h:outputLabel for="apr01_Nome" value="#{msg['principal_Nome_Aparelho']} 1:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr01_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 1º aparelho não informado." value="#{cliente.dispositivos[0].apr_Nome}"/>
+                                                <h:message for="apr01_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+ 
+                                            </c:when>
+                                            <c:when test="${i eq 2}">
+                                                
+                                                <h:outputLabel for="apr02_Nome" value="#{msg['principal_Nome_Aparelho']} 2:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr02_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 2º aparelho não informado." value="#{cliente.dispositivos[1].apr_Nome}"/>
+                                                <h:message for="apr02_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+                                                
+                                            </c:when>
+                                            <c:when test="${i eq 3}">
+                                                
+                                                <h:outputLabel for="apr03_Nome" value="#{msg['principal_Nome_Aparelho']} 3:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr03_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 3º aparelho não informado." value="#{cliente.dispositivos[2].apr_Nome}"/>
+                                                <h:message for="apr03_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+                                                
+                                            </c:when>
+                                            <c:when test="${i eq 4}">
+                                                
+                                                <h:outputLabel for="apr04_Nome" value="#{msg['principal_Nome_Aparelho']} 4:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr04_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 4º aparelho não informado." value="#{cliente.dispositivos[3].apr_Nome}"/>
+                                                <h:message for="apr04_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+                                                
+                                            </c:when> 
+                                            <c:when test="${i eq 5}">
+                                                
+                                                <h:outputLabel for="apr05_Nome" value="#{msg['principal_Nome_Aparelho']} 5:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr05_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 5º aparelho não informado." value="#{cliente.dispositivos[4].apr_Nome}"/>
+                                                <h:message for="apr05_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+                                                
+                                            </c:when>
+                                            <c:when test="${i eq 6}">
+                                                
+                                                <h:outputLabel for="apr06_Nome" value="#{msg['principal_Nome_Aparelho']} 6:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr06_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 6º aparelho não informado." value="#{cliente.dispositivos[5].apr_Nome}"/>
+                                                <h:message for="apr06_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+                                                
+                                            </c:when>
+                                            <c:when test="${i eq 7}">
+                                                
+                                                <h:outputLabel for="apr07_Nome" value="#{msg['principal_Nome_Aparelho']} 7:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr07_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 7º aparelho não informado." value="#{cliente.dispositivos[6].apr_Nome}"/>
+                                                <h:message for="apr07_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+                                                
+                                            </c:when>
+                                            <c:when test="${i eq 8}">
+                                                
+                                                <h:outputLabel for="apr08_Nome" value="#{msg['principal_Nome_Aparelho']} 8:" styleClass="texto_Principal"/>
+                                                <h:inputText id="apr08_Nome" size="15" styleClass="caixa_Texto_DDD" required="true" requiredMessage="Nome do 8º aparelho não informado." value="#{cliente.dispositivos[7].apr_Nome}"/>
+                                                <h:message for="apr08_Nome" styleClass="mensagem_Error"/>
+                                                <br/>
+                                                
+                                            </c:when>
+                                                
+                                            <c:otherwise>
+                                            </c:otherwise>
+                                        </c:choose>
+
+                                    </c:forEach>
+ 
+                            </c:if>
+
+                            <br/>
+                            <br/>
+
+                            <h:commandButton id="mostrarTabela"  value="#{msg['cadastro_Botao_Gravar']}" styleClass="butoes_Principal" actionListener="#{cliente.mostrarGUIInterruptor}"/>  
+                            <h:message for="mostrarTabela" styleClass="mensagem_Error"/>
+
+                        </c:if>
+
+
+                    </c:if>
+
+                    <br/>
+                    <br/>
+                    
+                    <c:if test="${cliente.flag_Nomes_Aparelhos == false}">
+                        
+                        <h:commandButton id="mostrarCamposInterruptor" value="#{msg['principal_Botao_Adicionar']}" styleClass="butoes_Principal" actionListener="#{cliente.mostrarGUIInterruptor}"/>
+                        
+                    </c:if>
+
+                    <br/>
+                    <br/>
+                </c:if>
+
+            </h:panelGroup>
+
+        </h:panelGrid>
+    </f:subview>
+                    
+</jsp:root>
