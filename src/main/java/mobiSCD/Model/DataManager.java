@@ -31,24 +31,9 @@ public class DataManager {
 
         this.msg = out;
 
-        String host = "172.30.72.31";
-        String porta = "3306";
-        String database = "sampledb";
-        
-        String url = "jdbc:mysql://" + host + ":" + porta + "/" + database;
-
-        carregaDriver("com.mysql.jdbc.Driver");
-        Connection c = conecta(url, "admin", "hadouken83");
-        statement = criaStatement(c);
-        
-        /* SOMENTE PARA TESTE LOCAL *****************************************************************
-
         carregaDriver("com.mysql.jdbc.Driver");
         Connection c = conecta("jdbc:mysql://localhost/SCDataBase", "root", "hadouken83");
         statement = criaStatement(c);
-        
-        *********************************************************************************************/
-
     }
     
     
@@ -56,24 +41,9 @@ public class DataManager {
     
     public DataManager() {
 
-        String host = "172.30.72.31";
-        String porta = "3306";
-        String database = "sampledb";
-        
-        String url = "jdbc:mysql://" + host + ":" + porta + "/" + database;
-
-        carregaDriver("com.mysql.jdbc.Driver");
-        Connection c = conecta(url, "admin", "hadouken83");
-        statement = criaStatement(c);
-        
-        /* SOMENTE PARA TESTE LOCAL *****************************************************************
-
         carregaDriver("com.mysql.jdbc.Driver");
         Connection c = conecta("jdbc:mysql://localhost/SCDataBase", "root", "hadouken83");
         statement = criaStatement(c);
-        
-        *********************************************************************************************/
-
     }
     
     
